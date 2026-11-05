@@ -67,7 +67,7 @@ fun SecretStatusScreen(modifier: Modifier=Modifier)
             Spacer(modifier = Modifier.height(8.dp))
             Text(
                 text = "API Key: ${massKey(apiKey)}",
-                style = MaterialTheme.typography.bodyMedium
+                sty le = MaterialTheme.typography.bodyMedium
             )
         }else{
             Text(
