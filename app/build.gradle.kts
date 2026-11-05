@@ -11,7 +11,9 @@ val localProperties = Properties().apply{
         load(localPropertiesFile.inputStream())
     }
 }
-val demoApiKey: String = localProperties.getProperty("DEMO_API_KEY")?:error("DEMO_API_KEY not found in local.properties")
+val demoApiKey: String = System.getenv("DEMO_API_KEY")
+    ?:localProperties.getProperty("DEMO_API_KEY")//local run
+    ?:error("DEMO_API_KEY not found in local.properties")
 
 android {
     namespace = "com.kuldeep.cicdsecret"
